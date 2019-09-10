@@ -11,6 +11,7 @@ namespace BankingApp
         public int AccountNo { get; set; }
         public double Balance { get; set; }
 
+
         public string BalSummary
         {
             get
@@ -18,5 +19,6 @@ namespace BankingApp
                 return $"{AccountNo}: {Balance.ToString("c")}";
             }
         }
+
     }
 }
