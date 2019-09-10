@@ -13,7 +13,7 @@ namespace BankingApp
     public partial class frmAcct : Form
     {
         const int INITIAL_ACCT_NO = 100;
-        List<Account> acctList = new List<Account>();
+        BindingList<Account> acctList = new BindingList<Account>();
 
         public frmAcct()
         {
@@ -24,18 +24,13 @@ namespace BankingApp
         {
             Account newAccount = new Account()
             {
-                AccountNo = INITIAL_ACCT_NO,
+                AccountNo = acctList.Count != 0 ? acctList[acctList.Count - 1].AccountNo + 1 : INITIAL_ACCT_NO,
                 Balance = double.Parse(txtBal.Text)
             };
 
             acctList.Add(newAccount);
-            listAccounts.Items.Clear();
-
-            foreach (var item in acctList)
-            {
-                listAccounts.Items.Add(item.BalSummary);
-            }
-
+            listAccounts.DataSource = acctList;
+            listAccounts.DisplayMember = "BalSummary";
         }
     }
 }

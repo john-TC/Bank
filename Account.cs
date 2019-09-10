@@ -11,7 +11,6 @@ namespace BankingApp
         public int AccountNo { get; set; }
         public double Balance { get; set; }
 
-
         public string BalSummary
         {
             get
@@ -20,5 +19,19 @@ namespace BankingApp
             }
         }
 
+        public void Deposit(double val)
+        {
+
+        }
+
+        public void Withdrawl(double val)
+        {
+
+        }
+
+        public int IncrementAcct()
+        {
+            return AccountNo += 1;
+        }
     }
 }

@@ -39,14 +39,12 @@
             this.lblAmount = new System.Windows.Forms.Label();
             this.listAccounts = new System.Windows.Forms.ListBox();
             this.lblAccounts = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.btnCreate);
             this.groupBox1.Controls.Add(this.txtBal);
             this.groupBox1.Controls.Add(this.lblBalance);
@@ -152,14 +150,6 @@
             this.lblAccounts.TabIndex = 3;
             this.lblAccounts.Text = "Accounts:";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(172, 95);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 27);
-            this.comboBox1.TabIndex = 3;
-            // 
             // frmAcct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -195,7 +185,6 @@
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.ListBox listAccounts;
         private System.Windows.Forms.Label lblAccounts;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
