@@ -31,6 +31,8 @@ namespace BankingApp
             acctList.Add(newAccount);
             listAccounts.DataSource = acctList;
             listAccounts.DisplayMember = "BalSummary";
+            //For future use with CSV file
+            listAccounts.ValueMember = "AccountNo";
         }
     }
 }
