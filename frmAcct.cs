@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BankingApp
 {
     public partial class frmAcct : Form
@@ -33,6 +34,22 @@ namespace BankingApp
             listAccounts.DisplayMember = "BalSummary";
             //For future use with CSV file
             listAccounts.ValueMember = "AccountNo";
+        }
+
+        private void btnDeposit_Click(object sender, EventArgs e)
+        { 
+            acctList[listAccounts.SelectedIndex].Deposit(double.Parse(txtAmount.Text));
+
+            listAccounts.DataSource = null;
+            listAccounts.DataSource = acctList;
+            listAccounts.DisplayMember = "BalSummary";
+            //For future use with CSV file
+            listAccounts.ValueMember = "AccountNo";
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            //acctList[listAccounts.SelectedIndex].w
         }
     }
 }

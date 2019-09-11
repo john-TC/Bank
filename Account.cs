@@ -21,12 +21,12 @@ namespace BankingApp
 
         public void Deposit(double val)
         {
-
+            Balance += val;
         }
 
         public void Withdrawl(double val)
         {
-
+            Balance -= val;
         }
 
         public int IncrementAcct()

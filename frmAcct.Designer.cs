@@ -71,7 +71,7 @@
             // 
             this.txtBal.Location = new System.Drawing.Point(179, 41);
             this.txtBal.Name = "txtBal";
-            this.txtBal.Size = new System.Drawing.Size(100, 27);
+            this.txtBal.Size = new System.Drawing.Size(100, 32);
             this.txtBal.TabIndex = 1;
             // 
             // lblBalance
@@ -79,7 +79,7 @@
             this.lblBalance.AutoSize = true;
             this.lblBalance.Location = new System.Drawing.Point(31, 44);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(113, 19);
+            this.lblBalance.Size = new System.Drawing.Size(144, 24);
             this.lblBalance.TabIndex = 0;
             this.lblBalance.Text = "Initial Balance:";
             // 
@@ -106,6 +106,7 @@
             this.btnWithdraw.TabIndex = 3;
             this.btnWithdraw.Text = "Withdraw";
             this.btnWithdraw.UseVisualStyleBackColor = true;
+            this.btnWithdraw.Click += new System.EventHandler(this.btnWithdraw_Click);
             // 
             // btnDeposit
             // 
@@ -115,12 +116,13 @@
             this.btnDeposit.TabIndex = 2;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(179, 41);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(100, 27);
+            this.txtAmount.Size = new System.Drawing.Size(100, 32);
             this.txtAmount.TabIndex = 1;
             // 
             // lblAmount
@@ -128,17 +130,17 @@
             this.lblAmount.AutoSize = true;
             this.lblAmount.Location = new System.Drawing.Point(88, 44);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(72, 19);
+            this.lblAmount.Size = new System.Drawing.Size(86, 24);
             this.lblAmount.TabIndex = 0;
             this.lblAmount.Text = "Amount:";
             // 
             // listAccounts
             // 
             this.listAccounts.FormattingEnabled = true;
-            this.listAccounts.ItemHeight = 19;
+            this.listAccounts.ItemHeight = 24;
             this.listAccounts.Location = new System.Drawing.Point(325, 49);
             this.listAccounts.Name = "listAccounts";
-            this.listAccounts.Size = new System.Drawing.Size(211, 270);
+            this.listAccounts.Size = new System.Drawing.Size(211, 268);
             this.listAccounts.TabIndex = 2;
             // 
             // lblAccounts
@@ -146,13 +148,13 @@
             this.lblAccounts.AutoSize = true;
             this.lblAccounts.Location = new System.Drawing.Point(325, 17);
             this.lblAccounts.Name = "lblAccounts";
-            this.lblAccounts.Size = new System.Drawing.Size(79, 19);
+            this.lblAccounts.Size = new System.Drawing.Size(96, 24);
             this.lblAccounts.TabIndex = 3;
             this.lblAccounts.Text = "Accounts:";
             // 
             // frmAcct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 339);
             this.Controls.Add(this.lblAccounts);

@@ -8,3 +8,13 @@ C:\Users\student2\Documents\GitHub\Bank\bin\Debug\BankingApp.exe
 C:\Users\student2\Documents\GitHub\Bank\bin\Debug\BankingApp.pdb
 C:\Users\student2\Documents\GitHub\Bank\obj\Debug\BankingApp.exe
 C:\Users\student2\Documents\GitHub\Bank\obj\Debug\BankingApp.pdb
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\bin\Debug\BankingApp.exe.config
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\bin\Debug\BankingApp.exe
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\bin\Debug\BankingApp.pdb
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\obj\Debug\BankingApp.frmAcct.resources
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\obj\Debug\BankingApp.Properties.Resources.resources
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\obj\Debug\BankingApp.csproj.GenerateResource.cache
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\obj\Debug\BankingApp.csproj.CoreCompileInputs.cache
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\obj\Debug\BankingApp.exe
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\obj\Debug\BankingApp.pdb
+C:\Users\colec\OneDrive\Documents\GitHub\Bank\obj\Debug\BankingApp.csprojAssemblyReference.cache
