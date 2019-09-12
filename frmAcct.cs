@@ -21,25 +21,8 @@ namespace BankingApp
             InitializeComponent();
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void RefreshList()
         {
-            Account newAccount = new Account()
-            {
-                AccountNo = acctList.Count != 0 ? acctList[acctList.Count - 1].AccountNo + 1 : INITIAL_ACCT_NO,
-                Balance = double.Parse(txtBal.Text)
-            };
-
-            acctList.Add(newAccount);
-            listAccounts.DataSource = acctList;
-            listAccounts.DisplayMember = "BalSummary";
-            //For future use with CSV file
-            listAccounts.ValueMember = "AccountNo";
-        }
-
-        private void btnDeposit_Click(object sender, EventArgs e)
-        { 
-            acctList[listAccounts.SelectedIndex].Deposit(double.Parse(txtAmount.Text));
-
             listAccounts.DataSource = null;
             listAccounts.DataSource = acctList;
             listAccounts.DisplayMember = "BalSummary";
@@ -47,9 +30,30 @@ namespace BankingApp
             listAccounts.ValueMember = "AccountNo";
         }
 
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            Account newAccount = new Account()
+            {
+                AccountNo = acctList.Count != 0 ? acctList[acctList.Count - 1].AccountNo + 1 : INITIAL_ACCT_NO,
+                Balance = double.Parse(txtBal.Text)
+            };
+            acctList.Add(newAccount);
+
+            RefreshList();
+        }
+
+        private void btnDeposit_Click(object sender, EventArgs e)
+        { 
+            acctList[listAccounts.SelectedIndex].Deposit(double.Parse(txtAmount.Text));
+
+            RefreshList();
+        }
+
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
-            //acctList[listAccounts.SelectedIndex].w
+            acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text));
+
+            RefreshList();
         }
     }
 }
