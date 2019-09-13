@@ -28,3 +28,13 @@ C:\Bank\obj\Debug\BankingApp.csproj.GenerateResource.cache
 C:\Bank\obj\Debug\BankingApp.csproj.CoreCompileInputs.cache
 C:\Bank\obj\Debug\BankingApp.exe
 C:\Bank\obj\Debug\BankingApp.pdb
+C:\Users\John\Documents\GitHub\Bank\bin\Debug\BankingApp.exe.config
+C:\Users\John\Documents\GitHub\Bank\bin\Debug\BankingApp.exe
+C:\Users\John\Documents\GitHub\Bank\bin\Debug\BankingApp.pdb
+C:\Users\John\Documents\GitHub\Bank\obj\Debug\BankingApp.csprojAssemblyReference.cache
+C:\Users\John\Documents\GitHub\Bank\obj\Debug\BankingApp.frmAcct.resources
+C:\Users\John\Documents\GitHub\Bank\obj\Debug\BankingApp.Properties.Resources.resources
+C:\Users\John\Documents\GitHub\Bank\obj\Debug\BankingApp.csproj.GenerateResource.cache
+C:\Users\John\Documents\GitHub\Bank\obj\Debug\BankingApp.csproj.CoreCompileInputs.cache
+C:\Users\John\Documents\GitHub\Bank\obj\Debug\BankingApp.exe
+C:\Users\John\Documents\GitHub\Bank\obj\Debug\BankingApp.pdb

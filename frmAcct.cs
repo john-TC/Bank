@@ -55,5 +55,12 @@ namespace BankingApp
 
             RefreshList();
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            acctList.Remove(acctList[listAccounts.SelectedIndex]);
+
+            RefreshList();
+        }
     }
 }

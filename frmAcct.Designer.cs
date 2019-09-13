@@ -39,12 +39,14 @@
             this.lblAmount = new System.Windows.Forms.Label();
             this.listAccounts = new System.Windows.Forms.ListBox();
             this.lblAccounts = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnCreate);
             this.groupBox1.Controls.Add(this.txtBal);
             this.groupBox1.Controls.Add(this.lblBalance);
@@ -71,7 +73,7 @@
             // 
             this.txtBal.Location = new System.Drawing.Point(179, 41);
             this.txtBal.Name = "txtBal";
-            this.txtBal.Size = new System.Drawing.Size(100, 32);
+            this.txtBal.Size = new System.Drawing.Size(100, 27);
             this.txtBal.TabIndex = 1;
             // 
             // lblBalance
@@ -79,7 +81,7 @@
             this.lblBalance.AutoSize = true;
             this.lblBalance.Location = new System.Drawing.Point(31, 44);
             this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(144, 24);
+            this.lblBalance.Size = new System.Drawing.Size(113, 19);
             this.lblBalance.TabIndex = 0;
             this.lblBalance.Text = "Initial Balance:";
             // 
@@ -122,7 +124,7 @@
             // 
             this.txtAmount.Location = new System.Drawing.Point(179, 41);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(100, 32);
+            this.txtAmount.Size = new System.Drawing.Size(100, 27);
             this.txtAmount.TabIndex = 1;
             // 
             // lblAmount
@@ -130,17 +132,17 @@
             this.lblAmount.AutoSize = true;
             this.lblAmount.Location = new System.Drawing.Point(88, 44);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(86, 24);
+            this.lblAmount.Size = new System.Drawing.Size(72, 19);
             this.lblAmount.TabIndex = 0;
             this.lblAmount.Text = "Amount:";
             // 
             // listAccounts
             // 
             this.listAccounts.FormattingEnabled = true;
-            this.listAccounts.ItemHeight = 24;
+            this.listAccounts.ItemHeight = 19;
             this.listAccounts.Location = new System.Drawing.Point(325, 49);
             this.listAccounts.Name = "listAccounts";
-            this.listAccounts.Size = new System.Drawing.Size(211, 268);
+            this.listAccounts.Size = new System.Drawing.Size(211, 251);
             this.listAccounts.TabIndex = 2;
             // 
             // lblAccounts
@@ -148,13 +150,23 @@
             this.lblAccounts.AutoSize = true;
             this.lblAccounts.Location = new System.Drawing.Point(325, 17);
             this.lblAccounts.Name = "lblAccounts";
-            this.lblAccounts.Size = new System.Drawing.Size(96, 24);
+            this.lblAccounts.Size = new System.Drawing.Size(79, 19);
             this.lblAccounts.TabIndex = 3;
             this.lblAccounts.Text = "Accounts:";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(179, 95);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(84, 30);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
             // frmAcct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 339);
             this.Controls.Add(this.lblAccounts);
@@ -187,6 +199,7 @@
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.ListBox listAccounts;
         private System.Windows.Forms.Label lblAccounts;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
