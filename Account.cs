@@ -29,11 +29,17 @@ namespace BankingApp
             if (Balance < 0 && Balance >= OverdraftTotal * -1)
             {
                 Balance += val;
-                OverdraftRemaining = Balance + OverdraftTotal;
+                if (Balance > 0)
+                {
+                    OverdraftRemaining = OverdraftTotal;
+                }
+                else
+                {
+                    OverdraftRemaining = Balance + OverdraftTotal;
+                }
             }
             else
             {
-                OverdraftRemaining = OverdraftTotal;
                 Balance += val;
             }
         }
@@ -48,7 +54,6 @@ namespace BankingApp
                 }
                 else
                 {
-                    OverdraftRemaining = OverdraftTotal;
                     Balance -= val;
                 }
             }
@@ -65,6 +70,7 @@ namespace BankingApp
         public void DeleteOverdraft()
         {
             OverdraftTotal = 0;
+            OverdraftRemaining = 0;
         }
     }
 }

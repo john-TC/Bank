@@ -49,23 +49,37 @@ namespace BankingApp
                 RefreshList();
             }
         }
-        private void btnDeposit_Click(object sender, EventArgs e)
-        {
-            ClearError();
-            acctList[listAccounts.SelectedIndex].Deposit(double.Parse(txtAmount.Text));
-            RefreshList();
-        }
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-            ClearError();
-            acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text));
-            RefreshList();
-        }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             ClearError();
             acctList.Remove(acctList[listAccounts.SelectedIndex]);
             RefreshList();
+        }
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            ClearError();
+            if (double.Parse(txtAmount.Text) < 0)
+            {
+                lblErrors.Text = "Value cannot be less than 0.";
+            }
+            else
+            {
+                acctList[listAccounts.SelectedIndex].Deposit(double.Parse(txtAmount.Text));
+                RefreshList();
+            }
+        }
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            ClearError();
+            if (double.Parse(txtAmount.Text) < 0)
+            {
+                lblErrors.Text = "Value cannot be less than 0.";
+            }
+            else
+            {
+                acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text));
+                RefreshList();
+            }
         }
         private void btnCreateOverdraft_Click(object sender, EventArgs e)
         {
