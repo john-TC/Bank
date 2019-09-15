@@ -20,24 +20,37 @@ namespace BankingApp
                 return
                     $"No: {AccountNo} -" +
                     $"Bal: {Balance.ToString("c")}," +
-                    $"Overdraft Total: {OverdraftTotal}," +
-                    $"Overdraft Remaining: {OverdraftRemaining}";
+                    $"Overdraft Total: {OverdraftTotal.ToString("c")}," +
+                    $"Overdraft Remaining: {OverdraftRemaining.ToString("c")}";
             }
         }
         public void Deposit(double val)
         {
-            Balance += val;
-        }
-        public bool Withdrawl(double val)
-        {
-            if (Balance + OverdraftTotal - val < 0)
+            if (Balance < 0 && Balance >= OverdraftTotal * -1)
             {
-                return false;
+                Balance += val;
+                OverdraftRemaining = Balance + OverdraftTotal;
             }
             else
             {
-                Balance -= val;
-                return true;
+                OverdraftRemaining = OverdraftTotal;
+                Balance += val;
+            }
+        }
+        public void Withdrawl(double val)
+        {
+            if (Balance + OverdraftTotal - val >= 0)
+            {
+                if (Balance - val < 0 && Balance - val >= OverdraftTotal * -1)
+                {
+                    Balance -= val;
+                    OverdraftRemaining = Balance + OverdraftTotal;
+                }
+                else
+                {
+                    OverdraftRemaining = OverdraftTotal;
+                    Balance -= val;
+                }
             }
         }
         public int IncrementAcct()
@@ -47,6 +60,7 @@ namespace BankingApp
         public void AddOverdraft(double val)
         {
             OverdraftTotal = val;
+            OverdraftRemaining = OverdraftTotal;
         }
         public void DeleteOverdraft()
         {

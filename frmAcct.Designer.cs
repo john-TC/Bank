@@ -161,7 +161,7 @@
             this.listAccounts.ItemHeight = 19;
             this.listAccounts.Location = new System.Drawing.Point(325, 49);
             this.listAccounts.Name = "listAccounts";
-            this.listAccounts.Size = new System.Drawing.Size(561, 555);
+            this.listAccounts.Size = new System.Drawing.Size(654, 555);
             this.listAccounts.TabIndex = 2;
             // 
             // lblAccounts
@@ -246,7 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 619);
+            this.ClientSize = new System.Drawing.Size(991, 619);
             this.Controls.Add(this.gbErrors);
             this.Controls.Add(this.gbOverdraft);
             this.Controls.Add(this.lblAccounts);
