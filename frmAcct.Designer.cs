@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbCreate = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -48,12 +47,10 @@
             this.lblOverdraftAmount = new System.Windows.Forms.Label();
             this.gbErrors = new System.Windows.Forms.GroupBox();
             this.lblErrors = new System.Windows.Forms.Label();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbCreate.SuspendLayout();
             this.gbSelect.SuspendLayout();
             this.gbOverdraft.SuspendLayout();
             this.gbErrors.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCreate
@@ -246,10 +243,6 @@
             this.lblErrors.Size = new System.Drawing.Size(0, 19);
             this.lblErrors.TabIndex = 0;
             // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(BankingApp.Account);
-            // 
             // frmAcct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -273,7 +266,6 @@
             this.gbOverdraft.PerformLayout();
             this.gbErrors.ResumeLayout(false);
             this.gbErrors.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +292,6 @@
         private System.Windows.Forms.Label lblOverdraftAmount;
         private System.Windows.Forms.GroupBox gbErrors;
         private System.Windows.Forms.Label lblErrors;
-        private System.Windows.Forms.BindingSource accountBindingSource;
     }
 }
 

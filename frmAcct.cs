@@ -34,26 +34,40 @@ namespace BankingApp
         private void btnCreate_Click(object sender, EventArgs e)
         {
             ClearError();
-            if (double.Parse(txtBal.Text) < 0)
+            try
             {
-                lblErrors.Text = "Value cannot be less than 0.";
-            }
-            else
-            {
-                Account newAccount = new Account()
+                if (double.Parse(txtBal.Text) < 0)
                 {
-                    AccountNo = acctList.Count != 0 ? acctList[acctList.Count - 1].AccountNo + 1 : INITIAL_ACCT_NO,
-                    Balance = double.Parse(txtBal.Text)
-                };
-                acctList.Add(newAccount);
-                RefreshList();
+                    lblErrors.Text = "Value cannot be less than 0.";
+                }
+                else
+                {
+                    Account newAccount = new Account()
+                    {
+                        AccountNo = acctList.Count != 0 ? acctList[acctList.Count - 1].AccountNo + 1 : INITIAL_ACCT_NO,
+                        Balance = double.Parse(txtBal.Text)
+                    };
+                    acctList.Add(newAccount);
+                    RefreshList();
+                }
+            }
+            catch (System.FormatException)
+            {
+                lblErrors.Text = "Format exception.";
             }
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            ClearError();
-            acctList.Remove(acctList[listAccounts.SelectedIndex]);
-            RefreshList();
+            try
+            {
+                ClearError();
+                acctList.Remove(acctList[listAccounts.SelectedIndex]);
+                RefreshList();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                lblErrors.Text = "Please select an item.";
+            }
         }
         private void btnDeposit_Click(object sender, EventArgs e)
         {
