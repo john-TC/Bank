@@ -12,6 +12,7 @@ namespace BankingApp
         public double Balance { get; set; }
         public double OverdraftTotal { get; set; }
         public double OverdraftRemaining { get; set; }
+        public string ErrorMessage { get; private set; }
 
         public string BalSummary
         {
@@ -43,8 +44,9 @@ namespace BankingApp
                 Balance += val;
             }
         }
-        public void Withdrawl(double val)
+        public bool Withdrawl(double val)
         {
+            bool success = true;
             if (Balance + OverdraftTotal - val >= 0)
             {
                 if (Balance - val < 0 && Balance - val >= OverdraftTotal * -1)
@@ -57,6 +59,12 @@ namespace BankingApp
                     Balance -= val;
                 }
             }
+            else
+            {
+                ErrorMessage = "Withrawl limit reached.";
+                success = false;
+            }
+            return success;
         }
         public int IncrementAcct()
         {

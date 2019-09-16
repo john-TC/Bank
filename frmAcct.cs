@@ -91,8 +91,15 @@ namespace BankingApp
             }
             else
             {
-                acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text));
-                RefreshList();
+                if (!acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text)))
+                {
+                    lblErrors.Text = acctList[listAccounts.SelectedIndex].ErrorMessage;
+                }
+                else
+                {
+                    acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text));
+                    RefreshList();
+                }
             }
         }
         private void btnCreateOverdraft_Click(object sender, EventArgs e)
