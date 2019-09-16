@@ -53,7 +53,7 @@ namespace BankingApp
             }
             catch (System.FormatException)
             {
-                lblErrors.Text = "Format exception.";
+                lblErrors.Text = "Enter a valid number.";
             }
         }
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -72,53 +72,93 @@ namespace BankingApp
         private void btnDeposit_Click(object sender, EventArgs e)
         {
             ClearError();
-            if (double.Parse(txtAmount.Text) < 0)
+            try
             {
-                lblErrors.Text = "Value cannot be less than 0.";
+                if (double.Parse(txtAmount.Text) < 0)
+                {
+                    lblErrors.Text = "Value cannot be less than 0.";
+                }
+                else
+                {
+                    acctList[listAccounts.SelectedIndex].Deposit(double.Parse(txtAmount.Text));
+                    RefreshList();
+                }
             }
-            else
+            catch (System.FormatException)
             {
-                acctList[listAccounts.SelectedIndex].Deposit(double.Parse(txtAmount.Text));
-                RefreshList();
+                lblErrors.Text = "Enter a valid number.";
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                lblErrors.Text = "Please select an item.";
             }
         }
         private void btnWithdraw_Click(object sender, EventArgs e)
         {
             ClearError();
-            if (double.Parse(txtAmount.Text) < 0)
+            try
             {
-                lblErrors.Text = "Value cannot be less than 0.";
-            }
-            else
-            {
-                if (!acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text)))
+                if (double.Parse(txtAmount.Text) < 0)
                 {
-                    lblErrors.Text = acctList[listAccounts.SelectedIndex].ErrorMessage;
+                    lblErrors.Text = "Value cannot be less than 0.";
                 }
                 else
                 {
-                    acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text));
-                    RefreshList();
+                    if (!acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text)))
+                    {
+                        lblErrors.Text = acctList[listAccounts.SelectedIndex].ErrorMessage;
+                    }
+                    else
+                    {
+                        acctList[listAccounts.SelectedIndex].Withdrawl(double.Parse(txtAmount.Text));
+                        RefreshList();
+                    }
                 }
+            }
+            catch (System.FormatException)
+            {
+                lblErrors.Text = "Enter a valid number.";
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                lblErrors.Text = "Please select an item.";
             }
         }
         private void btnCreateOverdraft_Click(object sender, EventArgs e)
         {
             ClearError();
-            if (double.Parse(txtOverdraft.Text) < 0)
+            try
             {
-                lblErrors.Text = "Value cannot be less than 0.";
+                if (double.Parse(txtOverdraft.Text) < 0)
+                {
+                    lblErrors.Text = "Value cannot be less than 0.";
+                }
+                else
+                {
+                    acctList[listAccounts.SelectedIndex].AddOverdraft(double.Parse(txtOverdraft.Text));
+                    RefreshList();
+                }
             }
-            else
+            catch (System.FormatException)
             {
-                acctList[listAccounts.SelectedIndex].AddOverdraft(double.Parse(txtOverdraft.Text));
-                RefreshList();
+                lblErrors.Text = "Enter a valid number.";
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                lblErrors.Text = "Please select an item.";
             }
         }
         private void BtnDeleteOverdraft_Click(object sender, EventArgs e)
         {
             ClearError();
-            acctList[listAccounts.SelectedIndex].DeleteOverdraft();
+            try
+            {
+                acctList[listAccounts.SelectedIndex].DeleteOverdraft();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                lblErrors.Text = "Please select an item.";
+            }
             RefreshList();
         }
     }
